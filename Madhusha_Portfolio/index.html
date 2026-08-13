@@ -1,0 +1,2824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Madhusha | Software Developer</title>
+
+    <meta name="description"
+        content="Madhusha - MCA Student and Aspiring Software Developer specializing in Python, Backend Development, REST APIs, Django, Flask, SQL and AI/ML.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+
+            --bg: #0a0a0f;
+            --bg-secondary: #111118;
+
+            --card: rgba(255,255,255,0.05);
+
+            --border: rgba(255,255,255,0.10);
+
+            --text: #f5f5f5;
+
+            --muted: #a5a5b0;
+
+            --accent: #8b5cf6;
+
+            --accent-light: #a78bfa;
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #6366f1
+                );
+        }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        .container {
+
+            width: min(1120px, 90%);
+
+            margin: auto;
+        }
+
+
+        section {
+
+            padding: 100px 0;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+
+        .section-title span {
+
+            color: var(--accent-light);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: clamp(32px, 5vw, 45px);
+
+            margin-top: 10px;
+        }
+
+
+        .section-title p {
+
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin: 15px auto 0;
+        }
+
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(10,10,15,0.75);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        nav {
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: 800;
+        }
+
+
+        .logo span {
+
+            color: var(--accent-light);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: #ccc;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            font-size: 26px;
+
+            cursor: pointer;
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        #home {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero {
+
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+            max-width: 850px;
+        }
+
+
+        .hero small {
+
+            color: var(--accent-light);
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(45px, 7vw, 80px);
+
+            line-height: 1.05;
+
+            margin: 15px 0;
+        }
+
+
+        .hero h1 span {
+
+            background: var(--gradient);
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .hero h2 {
+
+            color: #d0d0d8;
+
+            font-size: clamp(20px, 3vw, 30px);
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero p {
+
+            color: var(--muted);
+
+            max-width: 650px;
+
+            font-size: 17px;
+        }
+
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+            display: inline-block;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-family: inherit;
+        }
+
+
+        .btn-primary {
+
+            background: var(--gradient);
+
+            color: white;
+        }
+
+
+        .btn-secondary {
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.04);
+
+            color: white;
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+        }
+
+
+        .socials {
+
+            display: flex;
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+        }
+
+
+        .socials a:hover {
+
+            color: white;
+        }
+
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+        }
+
+
+        .about-text p {
+
+            color: var(--muted);
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-info {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .info-card {
+
+            padding: 22px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            background: var(--card);
+        }
+
+
+        .info-card strong {
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+
+        .info-card span {
+
+            color: var(--muted);
+        }
+
+
+
+        /* =========================
+           EXPERIENCE / EDUCATION
+        ========================== */
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 2px;
+
+            background: var(--border);
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 45px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .timeline-item::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 8px;
+
+            width: 17px;
+
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            box-shadow:
+                0 0 20px rgba(139,92,246,0.6);
+        }
+
+
+        .timeline-card {
+
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 15px;
+        }
+
+
+        .timeline-card h3 {
+
+            font-size: 21px;
+        }
+
+
+        .timeline-card .company {
+
+            color: var(--accent-light);
+
+            margin: 5px 0;
+        }
+
+
+        .timeline-card .date {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .timeline-card ul {
+
+            padding-left: 18px;
+
+            color: var(--muted);
+        }
+
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .project-card {
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            transition: 0.35s;
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(139,92,246,0.6);
+        }
+
+
+        .project-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project-card h3 {
+
+            font-size: 23px;
+        }
+
+
+        .project-date {
+
+            color: var(--accent-light);
+
+            font-size: 13px;
+
+            white-space: nowrap;
+        }
+
+
+        .project-card p {
+
+            color: var(--muted);
+
+            margin-bottom: 20px;
+        }
+
+
+        .tech-stack {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .tech {
+
+            padding: 6px 10px;
+
+            background:
+                rgba(139,92,246,0.12);
+
+            border:
+                1px solid rgba(139,92,246,0.2);
+
+            color: #c4b5fd;
+
+            border-radius: 7px;
+
+            font-size: 12px;
+        }
+
+
+        .features {
+
+            color: var(--muted);
+
+            padding-left: 18px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .project-links {
+
+            display: flex;
+
+            gap: 12px;
+        }
+
+
+        .project-links a {
+
+            border:
+                1px solid var(--border);
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+        }
+
+
+        .project-links a:hover {
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .skill-card {
+
+            padding: 25px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .skill-card:hover {
+
+            transform: translateY(-5px);
+        }
+
+
+        .skill-card h3 {
+
+            margin-bottom: 15px;
+
+            color: var(--accent-light);
+        }
+
+
+        .skill-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .skill {
+
+            background:
+                rgba(255,255,255,0.06);
+
+            padding: 7px 10px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            color: #ccc;
+        }
+
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .cert-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .cert-card {
+
+            padding: 25px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .cert-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(139,92,246,0.5);
+        }
+
+
+        .cert-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .cert-card a {
+
+            color: var(--accent-light);
+
+            font-size: 13px;
+
+            cursor: pointer;
+        }
+
+
+        .cert-card a:hover {
+
+            color: white;
+        }
+
+
+
+        /* =========================
+           CERTIFICATE MODAL
+        ========================== */
+
+        .certificate-modal {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            background:
+                rgba(0,0,0,0.90);
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .certificate-modal.active {
+
+            display: flex;
+        }
+
+
+        .certificate-modal-content {
+
+            position: relative;
+
+            max-width: 1000px;
+
+            max-height: 90vh;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .certificate-modal img {
+
+            max-width: 100%;
+
+            max-height: 85vh;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            border:
+                1px solid var(--border);
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.6);
+        }
+
+
+        .certificate-close {
+
+            position: absolute;
+
+            top: -45px;
+
+            right: 0;
+
+            width: 40px;
+
+            height: 40px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color: white;
+
+            font-size: 26px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .certificate-close:hover {
+
+            background:
+                rgba(255,255,255,0.18);
+        }
+
+
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================== */
+
+        .achievement-list {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .achievement {
+
+            padding: 20px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 12px;
+
+            color: #ddd;
+        }
+
+
+        .achievement-content {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .achievement-text {
+
+            flex: 1;
+        }
+
+
+        .achievement-certificate {
+
+            flex-shrink: 0;
+
+            color: var(--accent-light);
+
+            border:
+                1px solid rgba(139,92,246,0.35);
+
+            background:
+                rgba(139,92,246,0.08);
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .achievement-certificate:hover {
+
+            background:
+                rgba(139,92,246,0.18);
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =========================
+           RESUME
+        ========================== */
+
+        .resume-box {
+
+            text-align: center;
+
+            padding: 60px 30px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 25px;
+        }
+
+
+        .resume-box h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .resume-box p {
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 30px;
+        }
+
+
+        .contact-info {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .contact-card {
+
+            padding: 20px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 12px;
+        }
+
+
+        .contact-card span {
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        .contact-card p {
+
+            margin-top: 5px;
+        }
+
+
+        .contact-card a:hover {
+
+            color: var(--accent-light);
+        }
+
+
+        form {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 14px;
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            color: white;
+
+            font-family: inherit;
+
+            outline: none;
+        }
+
+
+        textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        input:focus,
+        textarea:focus {
+
+            border-color: var(--accent);
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            padding: 30px 0;
+
+            border-top:
+                1px solid var(--border);
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .hero,
+            .about-grid,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid,
+            .cert-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 75px;
+
+                right: 0;
+
+                width: 100%;
+
+                background: #0a0a0f;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                padding: 25px;
+
+                display: none;
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .menu-btn {
+
+                display: block;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            section {
+
+                padding: 75px 0;
+            }
+
+
+            .skills-grid,
+            .cert-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h1 {
+
+                font-size: 48px;
+            }
+
+
+            .project-top {
+
+                flex-direction: column;
+            }
+
+
+            .certificate-modal {
+
+                padding: 20px;
+            }
+
+
+            .certificate-close {
+
+                top: -50px;
+
+                right: 0;
+            }
+
+
+            .achievement-content {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a href="#home" class="logo">
+                    Madhusha<span>.</span>
+                </a>
+
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#experience">Experience</a>
+                    </li>
+
+                    <li>
+                        <a href="#education">Education</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#certifications">Certificates</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+
+                <div class="menu-btn" id="menuBtn">
+                    ☰
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section id="home">
+
+        <div class="container">
+
+            <div class="hero">
+
+
+                <div>
+
+                    <small>
+                        MCA STUDENT • SOFTWARE DEVELOPER
+                    </small>
+
+
+                    <h1>
+                        Hi, I'm <span>Madhusha</span>
+                    </h1>
+
+
+                    <h2>
+                        Aspiring Software Developer | Python Developer
+                    </h2>
+
+
+                    <p>
+                        Currently pursuing MCA with practical experience in
+                        backend development, REST APIs, database-driven
+                        applications, debugging, functional testing,
+                        and AI/ML-based projects.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary">
+
+                            View My Projects
+
+                        </a>
+
+
+                        <!-- RESUME DOWNLOAD -->
+
+                        <a
+                            href="madhusha_resume.pdf"
+                            class="btn btn-secondary"
+                            download="Madhusha_Resume.pdf">
+
+                            Download Resume
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="socials">
+
+                        <!-- Replace # with your GitHub URL -->
+
+                        <a
+                            href="https://github.com/Madhusha221"
+                            target="_blank">
+
+                            GitHub
+
+                        </a>
+
+
+                        <!-- Replace # with your LinkedIn URL -->
+
+                        <a
+                            href="https://www.linkedin.com/in/madhusha-k-7940b5340/"
+                            target="_blank">
+
+                            LinkedIn
+
+                        </a>
+
+
+                        <a
+                            href="mailto:madhushaa369@gmail.com">
+
+                            Email
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    About Me
+                </span>
+
+                <h2>
+                    Who I Am
+                </h2>
+
+                <p>
+                    A software developer focused on building
+                    practical, reliable and database-driven applications.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-grid">
+
+
+                <div class="about-text">
+
+                    <p>
+                        I am an aspiring Software Developer currently
+                        pursuing MCA. I have practical experience in
+                        backend development, REST API development,
+                        database-driven applications, debugging,
+                        testing, and feature enhancement.
+                    </p>
+
+
+                    <p>
+                        I completed a Python Developer internship at
+                        Pinnacle Lab where I worked with Django and
+                        Django REST Framework, Django ORM, unit testing,
+                        debugging, and feature enhancement.
+                    </p>
+
+
+                    <p>
+                        I am interested in building reliable software
+                        applications and continuing to develop my skills
+                        in Python, backend development, databases,
+                        software testing, and AI/ML.
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-info">
+
+
+                    <div class="info-card">
+
+                        <strong>
+                            Current Education
+                        </strong>
+
+                        <span>
+                            MCA — Shrinivas Institute of Technology
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <strong>
+                            Primary Focus
+                        </strong>
+
+                        <span>
+                            Python & Backend Development
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <strong>
+                            Interests
+                        </strong>
+
+                        <span>
+                            AI/ML • Software Testing • Databases
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <strong>
+                            Location
+                        </strong>
+
+                        <span>
+                            Mangalore, Karnataka, India
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Experience
+                </span>
+
+                <h2>
+                    Professional Experience
+                </h2>
+
+                <p>
+                    My practical experience in backend development
+                    and software engineering.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-card">
+
+
+                        <h3>
+                            Python Developer Intern
+                        </h3>
+
+
+                        <div class="company">
+                            Pinnacle Lab
+                        </div>
+
+
+                        <div class="date">
+                            January 2025
+                        </div>
+
+
+                        <ul>
+
+                            <li>
+                                Built backend services and REST APIs
+                                using Python and Django REST Framework (DRF).
+                            </li>
+
+                            <li>
+                                Designed and optimized database-driven
+                                applications using Django ORM.
+                            </li>
+
+                            <li>
+                                Implemented unit testing to improve
+                                reliability and reduce bugs.
+                            </li>
+
+                            <li>
+                                Participated in debugging, feature enhancement,
+                                and cross-functional coordination.
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Education
+                </span>
+
+                <h2>
+                    Academic Journey
+                </h2>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-card">
+
+                        <h3>
+                            MCA
+                        </h3>
+
+                        <div class="company">
+                            Shrinivas Institute of Technology, Mangalore
+                        </div>
+
+                        <div class="date">
+                            Present
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-card">
+
+                        <h3>
+                            B.Voc in Software and Application Development
+                        </h3>
+
+                        <div class="company">
+                            SDM College, Ujire
+                        </div>
+
+                        <div class="date">
+                            Completed — 2025
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-card">
+
+                        <h3>
+                            PUC in EBAS
+                        </h3>
+
+                        <div class="company">
+                            SDM PU College, Ujire
+                        </div>
+
+                        <div class="date">
+                            Completed — 2022
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Projects
+                </span>
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+                <p>
+                    Practical applications built using Python,
+                    databases, web technologies and machine learning.
+                </p>
+
+            </div>
+
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <div class="project-card">
+
+
+                    <div class="project-top">
+
+                        <h3>
+                            Placement Prediction Portal
+                        </h3>
+
+                        <span class="project-date">
+                            July 2026
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Developed a web-based Placement Prediction
+                        Portal to manage student profiles, placement
+                        records, and recruitment activities through
+                        a centralized system.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span class="tech">
+                            Python
+                        </span>
+
+                        <span class="tech">
+                            Flask
+                        </span>
+
+                        <span class="tech">
+                            Machine Learning
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                        <span class="tech">
+                            HTML
+                        </span>
+
+                        <span class="tech">
+                            CSS
+                        </span>
+
+                        <span class="tech">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <ul class="features">
+
+                        <li>
+                            Secure user authentication
+                        </li>
+
+                        <li>
+                            Student profile management
+                        </li>
+
+                        <li>
+                            Placement record management
+                        </li>
+
+                        <li>
+                            Recruitment activity management
+                        </li>
+
+                        <li>
+                            Role-based access
+                        </li>
+
+                        <li>
+                            Machine-learning component
+                        </li>
+
+                    </ul>
+
+
+                    <div class="project-links">
+
+                        <!-- Replace # with actual GitHub URL -->
+
+                        <a
+                            href="#"
+                            target="_blank">
+
+                            GitHub →
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card">
+
+
+                    <div class="project-top">
+
+                        <h3>
+                            Quiz Application
+                        </h3>
+
+                        <span class="project-date">
+                            August 2025
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Developed a Python quiz application with
+                        dynamic question banks and authentication.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span class="tech">
+                            Python
+                        </span>
+
+                        <span class="tech">
+                            OOP
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <ul class="features">
+
+                        <li>
+                            Dynamic question banks
+                        </li>
+
+                        <li>
+                            User authentication
+                        </li>
+
+                        <li>
+                            Score tracking
+                        </li>
+
+                        <li>
+                            Test cases
+                        </li>
+
+                        <li>
+                            Debugging
+                        </li>
+
+                        <li>
+                            Input validation
+                        </li>
+
+                        <li>
+                            Exception handling
+                        </li>
+
+                    </ul>
+
+
+                    <div class="project-links">
+
+                        <!-- Replace # with actual GitHub URL -->
+
+                        <a
+                            href="#"
+                            target="_blank">
+
+                            GitHub →
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Skills
+                </span>
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+            </div>
+
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">Python</span>
+
+                        <span class="skill">Java</span>
+
+                        <span class="skill">HTML</span>
+
+                        <span class="skill">SQL</span>
+
+                        <span class="skill">CSS</span>
+
+                        <span class="skill">C</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Backend
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">Django</span>
+
+                        <span class="skill">
+                            Django REST Framework
+                        </span>
+
+                        <span class="skill">Flask</span>
+
+                        <span class="skill">REST APIs</span>
+
+                        <span class="skill">Django ORM</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Databases
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">MySQL</span>
+
+                        <span class="skill">Firebase</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Testing
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">
+                            Manual Testing
+                        </span>
+
+                        <span class="skill">
+                            Unit Testing
+                        </span>
+
+                        <span class="skill">
+                            Functional Testing
+                        </span>
+
+                        <span class="skill">
+                            Debugging
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        AI / ML
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">
+                            Artificial Intelligence
+                        </span>
+
+                        <span class="skill">
+                            Machine Learning
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Tools & Core CS
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill">Git</span>
+
+                        <span class="skill">GitHub</span>
+
+                        <span class="skill">VS Code</span>
+
+                        <span class="skill">
+                            DevOps Tools
+                        </span>
+
+                        <span class="skill">OS</span>
+
+                        <span class="skill">DBMS</span>
+
+                        <span class="skill">OOP</span>
+
+                        <span class="skill">
+                            Computer Networks
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================== -->
+
+    <section id="certifications">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Certifications
+                </span>
+
+                <h2>
+                    Certificates & Workshops
+                </h2>
+
+            </div>
+
+
+
+            <div class="cert-grid">
+
+
+                <!-- CERTIFICATE 1 -->
+
+                <div class="cert-card">
+
+                    <h3>
+                        Accenture Nordics –
+                        Software Engineering Virtual Experience
+                    </h3>
+
+                    <a
+                        href="#"
+                        onclick="
+                            openCertificate(
+                                'certificates/accenture.jpg',
+                                'Accenture Nordics – Software Engineering Virtual Experience'
+                            );
+                            return false;
+                        ">
+
+                        View Certificate →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- CERTIFICATE 2 -->
+
+                <div class="cert-card">
+
+                    <h3>
+                        AI-ML Virtual Internship by
+                        Google for Developers
+                    </h3>
+
+                    <a
+                        href="#"
+                        onclick="
+                            openCertificate(
+                                'certificates/google-ai-ml.jpg',
+                                'AI-ML Virtual Internship by Google for Developers'
+                            );
+                            return false;
+                        ">
+
+                        View Certificate →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- CERTIFICATE 3 -->
+
+                <div class="cert-card">
+
+                    <h3>
+                        AI Foundation Associate Cloud Infrastructure –
+                        Oracle
+                    </h3>
+
+                    <a
+                        href="#"
+                        onclick="
+                            openCertificate(
+                                'certificates/oracle-ai-foundation.jpg',
+                                'AI Foundation Associate Cloud Infrastructure – Oracle'
+                            );
+                            return false;
+                        ">
+
+                        View Certificate →
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================== -->
+
+    <section id="achievements">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Achievements
+                </span>
+
+                <h2>
+                    Beyond Academics
+                </h2>
+
+            </div>
+
+
+
+            <div class="achievement-list">
+
+
+                <div class="achievement">
+
+                    <div class="achievement-content">
+
+                        <div class="achievement-text">
+
+                            🏆 Participated in Gen AI Exchange Hackathon
+                            conducted by Google Cloud H2S.
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="achievement-certificate"
+                            onclick="
+                                openCertificate(
+                                    'certificates/gen-ai-exchange-hackathon.jpg',
+                                    'Gen AI Exchange Hackathon Certificate'
+                                );
+                                return false;
+                            ">
+
+                            View Certificate →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    📚 Completed multiple self-learning tracks
+                    in Python, AI/ML, and cloud.
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RESUME
+    ========================== -->
+
+    <section id="resume">
+
+        <div class="container">
+
+
+            <div class="resume-box">
+
+                <h2>
+                    Let's Work Together
+                </h2>
+
+
+                <p>
+                    Interested in considering me for an internship
+                    or software development opportunity?
+                </p>
+
+
+                <!-- RESUME DOWNLOAD -->
+
+                <a
+                    href="resume.pdf"
+                    download="Madhusha_Resume.pdf"
+                    class="btn btn-primary">
+
+                    Download Resume
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Contact
+                </span>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+                <p>
+                    Feel free to reach out for internship,
+                    software development, or professional opportunities.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-info">
+
+
+                    <div class="contact-card">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <p>
+
+                            <a
+                                href="mailto:madhushaa369@gmail.com">
+
+                                madhushaa369@gmail.com
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-card">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <p>
+                            +91 6362816909
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-card">
+
+                        <span>
+                            Location
+                        </span>
+
+                        <p>
+                            Mangalore, Karnataka, India
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-card">
+
+                        <span>
+                            LinkedIn
+                        </span>
+
+                        <p>
+
+                            <!-- Replace # with your LinkedIn URL -->
+
+                            <a
+                                href="#"
+                                target="_blank">
+
+                                Add LinkedIn URL
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-card">
+
+                        <span>
+                            GitHub
+                        </span>
+
+                        <p>
+
+                            <!-- Replace # with your GitHub URL -->
+
+                            <a
+                                href="#"
+                                target="_blank">
+
+                                Add GitHub URL
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =========================
+                     FORMSPREE CONTACT FORM
+                ========================== -->
+
+                <form
+                    action="https://formspree.io/f/xyegjlve"
+                    method="POST">
+
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required>
+
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required>
+
+
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required></textarea>
+
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Portfolio Contact — Madhusha">
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Send Message
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CERTIFICATE MODAL
+    ========================== -->
+
+    <div
+        class="certificate-modal"
+        id="certificateModal"
+        onclick="closeCertificate(event)">
+
+
+        <div class="certificate-modal-content">
+
+
+            <button
+                class="certificate-close"
+                type="button"
+                onclick="closeCertificate()"
+                aria-label="Close certificate">
+
+                ×
+
+            </button>
+
+
+            <img
+                id="certificateImage"
+                src=""
+                alt="Certificate">
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Madhusha.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+
+
+        /* =========================
+           CERTIFICATE MODAL
+        ========================== */
+
+        const certificateModal =
+            document.getElementById(
+                "certificateModal"
+            );
+
+
+        const certificateImage =
+            document.getElementById(
+                "certificateImage"
+            );
+
+
+        function openCertificate(
+            imagePath,
+            certificateName
+        ) {
+
+            certificateImage.src =
+                imagePath;
+
+            certificateImage.alt =
+                certificateName;
+
+            certificateModal.classList.add(
+                "active"
+            );
+
+            document.body.style.overflow =
+                "hidden";
+        }
+
+
+
+        function closeCertificate(event) {
+
+            /*
+                If the user clicks inside the image
+                area, don't close the modal.
+            */
+
+            if (
+                event &&
+                event.target !== certificateModal
+            ) {
+
+                return;
+
+            }
+
+
+            certificateModal.classList.remove(
+                "active"
+            );
+
+
+            certificateImage.src = "";
+
+
+            document.body.style.overflow =
+                "";
+        }
+
+
+
+        /* =========================
+           ESCAPE KEY
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    certificateModal.classList.remove(
+                        "active"
+                    );
+
+                    certificateImage.src = "";
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+            }
+        );
+
+
+
+    </script>
+
+
+</body>
+
+</html>
